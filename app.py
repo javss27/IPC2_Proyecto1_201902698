@@ -1,1 +1,0 @@
-print("Inicio practica IPC 2 :D")
