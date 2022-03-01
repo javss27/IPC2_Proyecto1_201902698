@@ -6,7 +6,8 @@ piso = doc.getElementsByTagName("piso")[0]
 print(piso.firstChild.data)
 
 nombrePiso = doc.getElementsByTagName("piso")
-patronPiso = doc.getElementsByTagName("patron")
+codigoPiso = doc.getElementsByTagName("patron")
+patronPiso = doc.getElementsByTagName("patrones")
 
 for pisosArtesanales in nombrePiso:
     sid = pisosArtesanales.getAttribute("nombre")
@@ -23,12 +24,19 @@ for pisosArtesanales in nombrePiso:
     print("<F>:%s" % costoVolteo.firstChild.data)
     print("<S>:%s" % costoIntercambio.firstChild.data)
 
-for pisosArtesanales in patronPiso:
+
+for pisosArtesanales in codigoPiso:
     sid = pisosArtesanales.getAttribute("codigo")
-    sid = pisosArtesanales.getAttribute("patrones")
+    #sid = pisosArtesanales.getAttribute("patrones")
 
     
     print("codigo:%s " % sid)   
-    print("patrones:%s" % sid)
+    #print("patrones:%s" % sid)
     
-    
+for pisosArtesanales in patronPiso:
+    sid = pisosArtesanales.getAttribute("patrones")
+
+    patron =pisosArtesanales.getElementsByTagName("patrones")
+    for patrones in patron:
+        codigoDosPiso = patrones.getElementsByTagName("patron")[0]
+        print("patrones:%s" % codigoDosPiso.firstChild.data)
