@@ -1,5 +1,17 @@
 from xml.dom import minidom
 from clases import ListaSimple
+from tkinter.filedialog import askopenfilename
+
+def leerArchivo(ruta):
+    archivo = open(ruta, 'r')
+    contenido = archivo.read()
+    return contenido
+
+def iniciarAnalisis():
+    global ruta
+    ruta = askopenfilename()
+         
+
 doc = minidom.parse("datos.xml")
 
 
@@ -53,10 +65,12 @@ def inicial():
         piso2 = codigoPiso1
 
         lista.push( nombre, piso1, piso2 ,fila,columna,volteo,intercambio, patronUno, patronDos)
-
+                     
     lista.imprimir()
 
   
 
 if __name__ == "__main__":
     inicial()
+
+
