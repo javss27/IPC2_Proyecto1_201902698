@@ -1,0 +1,4 @@
+digraph D {    node [shape=plaintext]      some_node [  label=<<table border="0" cellborder="1" cellspacing="0"><tr><td bgcolor="white">B</td><td bgcolor="white">B</td><td bgcolor="white">B</td></tr> 
+<tr><td bgcolor="white">B</td><td bgcolor="black">B</td><td bgcolor="white">B</td></tr> 
+<tr><td bgcolor="white">B</td><td bgcolor="white">B</td><td bgcolor="black">B</td></tr> 
+</table>> ]  ;  }

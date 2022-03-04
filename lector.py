@@ -16,7 +16,6 @@ doc = minidom.parse("datos.xml")
 
 
 
-
 def inicial():
 
     lista = ListaSimple()
