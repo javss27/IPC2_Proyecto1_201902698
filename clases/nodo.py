@@ -1,5 +1,8 @@
 from .matriz import matriz
 from .grafico import crearGrafico
+from graphviz import render
+from graphviz import Source
+import os
 
 class Nodo:
     def __init__(self, siguiente, nombrePiso, codigoPatron1, codigoPatron2,R,C,F,S, patron1, patron2):
@@ -31,51 +34,89 @@ class Nodo:
         completo = False
         while not completo:
             completo = True
+            #for para las matrices
             for i in range(int(self.R)):
                 
                 for j in range(int(self.C)):
+                    #Obteniendo posicion de azulejos 
                     azulejoUno = self.matrizUno.buscar(i,j)
                     azulejoDos = self.matrizDos.buscar(i,j)
-                    print(azulejoUno, azulejoDos ,i ,",", j)
+                    
                     #realizando validaciones
                     if azulejoUno != azulejoDos:
+                        #se espera que sean diferentes
+                        #completo no esta completo 
                         completo = False
+                        #buscando azulejo uno Abajo 
                         azulejoUnoAbajo = self.matrizUno.buscar(i+1,j)
-                        
                         azulejoDosAbajo = self.matrizDos.buscar(i+1,j)
-
                         azulejoUnoDerecha = self.matrizUno.buscar(i,j+1)
                         azulejoDosDerecha = self.matrizDos.buscar(i,j+1)
-                        if int(self.F) > int(self.S) and azulejoUnoAbajo != None:
+                        if int(self.F)*(2) > int(self.S):
                             
-
-                            if azulejoUnoAbajo == azulejoDos:
+                            if  azulejoUnoAbajo != None:
+                                if azulejoUnoAbajo == azulejoDos :
+                                    if azulejoUnoAbajo != azulejoDosAbajo or (azulejoUnoAbajo == azulejoDosAbajo and int(self.F)*(2) > int(self.S)+int(self.F)):
                                 #SI EL COSTO DE VOLTEO MAYOR A CAMBIO
-                                if azulejoUnoAbajo != azulejoDosAbajo or int(self.F)*(2) < int(self.S):
-                                
-                                    self.precio += int(self.S)
-                                    self.matrizUno.cambiar(i+1,j,azulejoUno)
-                                    self.matrizUno.cambiar(i,j, azulejoUnoAbajo)
-                                elif  int(self.F) > int(self.S) and azulejoUnoDerecha != None:
+                                    
+                                        self.precio += int(self.S)
+                                        #haciendo cambio de azulejos 
+                                        self.matrizUno.cambiar(i+1,j,azulejoUno)
+                                        self.matrizUno.cambiar(i,j, azulejoUnoAbajo)
+                                        print("azulejo " , i,",",j, "intercambio abajo")
+                                        print("Se intercambiaron azulejos :D")
+                                        self.crearGrafico()
+                                    else:
+                                        self.voltearPiso(i,j)
+
+                                elif  azulejoUnoDerecha != None:
                                     if azulejoUnoDerecha == azulejoDos:
-                                        if azulejoUnoDerecha != azulejoDosDerecha or int(self.F)*(2) > int(self.S):
+                                        if azulejoUnoDerecha != azulejoDosDerecha or (azulejoUnoDerecha == azulejoDosDerecha and int(self.F)*(2) > int(self.S)+int(self.F)):
                                             self.precio += int(self.S)
                                             self.matrizUno.cambiar(i,j+1 ,azulejoUno)
                                             self.matrizUno.cambiar(i,j, azulejoUnoDerecha)
-                        elif  int(self.F) > int(self.S) and azulejoUnoDerecha != None:
-                            if azulejoUnoDerecha == azulejoDos:
-                                 if azulejoUnoDerecha != azulejoDosDerecha or int(self.F)*(2) > int(self.S):
-                                    self.precio += int(self.S)
-                                    self.matrizUno.cambiar(i,j+1 ,azulejoUno)
-                                    self.matrizUno.cambiar(i,j, azulejoUnoDerecha)
+                                            print("azulejo " , i,",",j, "intercambio derechaUno")
+                                            print("Se intercambiaron azulejos :D")
+                                            self.crearGrafico()
+                                        else:
+                                            self.voltearPiso(i,j)
+
+                                    
+                                    else:
+                                        self.voltearPiso(i,j)        
+                                else:
+                                    self.voltearPiso(i,j) 
+                                     
+                            elif   azulejoUnoDerecha != None:
+
+                                    if azulejoUnoDerecha == azulejoDos: 
+                                        if azulejoUnoDerecha != azulejoDosDerecha or (azulejoUnoDerecha == azulejoDosDerecha and int(self.F)*(2) > int(self.S)+int(self.F)) :
+
+                                            self.precio += int(self.S)
+                                            self.matrizUno.cambiar(i,j+1 ,azulejoUno)
+                                            self.matrizUno.cambiar(i,j, azulejoUnoDerecha)
+                                            print("azulejo " , i,",",j, "intercambio derechaDos")
+                                            print("Se intercambiaron azulejos :D")
+                                            self.crearGrafico()
+                                        else:
+                                            self.voltearPiso(i,j)
+                                        
+                                    else:
+                                        self.voltearPiso(i,j)       
+                            else:
+                                self.voltearPiso(i,j)                                     
                         else:
                             self.matrizUno.switch(i,j) 
                             self.precio += int(self.F) 
+                            print("Se voltearon los azulejos")
+                            self.crearGrafico()
+
             
         return self.precio                    
 
     #para crear archivo de grafico 
 
+    #creando grafico 
     def crearDot(self):
         grafico = 'digraph D {    node [shape=plaintext]      some_node [  label=<<table border="0" cellborder="1" cellspacing="0">'
 
@@ -86,21 +127,32 @@ class Nodo:
                     if contenido == "B":
                         grafico += '<td bgcolor="black">B</td>'
                     else:
-                        grafico += '<td bgcolor="white">B</td>'
+                        grafico += '<td bgcolor="white">W</td>'
                 grafico +=  "</tr> \n"
         grafico += '</table>> ]  ;  }'
         crearGrafico(grafico,"prueba1")
+        path = 'C:/Users/pjbco/Desktop/1ER SEMESTRE 2022/IPC2/Practica1/IPC2_Proyecto1_201902698/prueba1.dot'
+        s = Source.from_file(path)
+        s.render('abcd.gv', format='jpg',view=False)
+
          
     def crearGrafico(self):
         for i in range(int(self.R)):
                 separador = "|"
 
                 for j in range(int(self.C)):
-                    separador += self.matrizDos.buscar(i,j) + "|"
+                    separador += self.matrizUno.buscar(i,j) + "|"
                 print(separador)
                 
                 self.crearDot()
-                input("presione Enter para continuar!!")
+        input("presione Enter para continuar!!")
+    
+    def voltearPiso(self,i,j):
+        self.matrizUno.switch(i,j) 
+        self.precio += int(self.F) 
+        print("Se voltearon los azulejos 2")
+        self.crearGrafico()    
+
                     
 
 

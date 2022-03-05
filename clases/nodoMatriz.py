@@ -8,7 +8,7 @@ class nodoMatriz:
 
     def setSiguiente(self, siguiente):
         self.siguiente = siguiente
-
+        
     def setValor(self,x,y,valor):
         self.x = x 
         self.y = y 
