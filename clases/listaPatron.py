@@ -1,7 +1,10 @@
-from .nodo import Nodo
+from tkinter import commondialog
+from .nodoPatron import nodoPatron
+
+from dis import code_info
 
 
-class ListaSimple:
+class listaPatron:
     
     def __init__(self):
         self.inicio = self.fin = None
@@ -10,32 +13,31 @@ class ListaSimple:
     def estaVacia(self):
         return self.inicio == None
 
-    def push(self,  nombrePiso, R,C,F,S, listaPatrones):
+    def push(self, codigo, valor):
         if self.inicio == None:
             #Inicializando la pila
-            self.fin = self.inicio = Nodo(None,   nombrePiso, R,C,F,S, listaPatrones)
+            self.fin = self.inicio = nodoPatron(None, codigo, valor)
         else:
             
             #agregando el valor al (inicio) de la lista
-            ultimo = Nodo(None,  nombrePiso, R,C,F,S, listaPatrones)
+            ultimo = nodoPatron(None,codigo , valor)
             self.fin.siguiente = ultimo
             self.fin = ultimo
 
     def imprimir(self):
         temp = self.inicio
         while  temp != None:
-            print(temp.nombrePiso)
+            print(temp.codigo)
             temp = temp.siguiente
     
 
-    def buscar(self,nombre):
+    def buscar(self,codigo):
         temp = self.inicio
         while  temp != None:
-            if temp.nombrePiso == nombre:
-                return temp
+            if temp.codigo == codigo:
+                return temp.valor
 
             temp = temp.siguiente
             
 
     
-

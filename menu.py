@@ -1,3 +1,5 @@
+from tkinter import Y
+from clases import lista
 from lector import iniciarAnalisis
 
 
@@ -6,8 +8,8 @@ from lector import iniciarAnalisis
 # Array con las opciones del menu
 menu_options = {
     1: "Cargar Archivo xml.",
-    2: "",
-    3: "",
+    2: "Ver Pisos Disponibles",
+    3: "Ver Codigos",
     4: "",
     5: "",
 }
@@ -29,13 +31,36 @@ if __name__ == "__main__":
             print("Entrada incorrecta. Por favor ingrese un numero ...")
         if option == 1:
             print("Iniciando Analisis....")
-            iniciarAnalisis()
-           
+            global listaMenu 
+            listaMenu =  iniciarAnalisis()
+            print("Se han cargado los datos :D")
+          
         elif option == 2:
-            print("Cargando Instrucciones...")
+            print("Pisos Disponibles")
+            listaMenu.imprimir()
+            option2 = input("Escriba el nombre del piso que desea ver: ")
+            global verPiso
+            verPiso = listaMenu.buscar(option2)
+            print("Su piso a sido seleccionado. ")
         elif option == 3:
-            print("Analizando...")
+            verPiso.limpiar()
+            print("Seleccionar codigo uno")
             
+            verPiso.listaPatrones.imprimir()
+            option2 = input("Escriba el nombre del primer codigo: ")
+            patron = verPiso.listaPatrones.buscar(option2)
+            verPiso.matrizUno.llenar(int(verPiso.R), int(verPiso.C),patron)
+            verPiso.imprimirMatrizUno()
+            print("Seleccionar codigo dos:")
+            
+            verPiso.listaPatrones.imprimir()
+            option2 = input("Escriba el nombre del segundo codigo: ")
+            patron = verPiso.listaPatrones.buscar(option2)
+            verPiso.matrizDos.llenar(int(verPiso.R), int(verPiso.C),patron)
+            verPiso.imprimirMatrizDos()
+            print("Pasos para cambiar el patron: ")
+            print("Precio Total:", verPiso.calcular())
+
         elif option == 4:
             print("Generando reporte....")
             

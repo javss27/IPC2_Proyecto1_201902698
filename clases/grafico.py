@@ -1,7 +1,7 @@
 import os
 
 
-def crearGrafico(dot, nombre):
+def guardarDot(dot, nombre):
     path = os.getcwd() + "/" + nombre + ".dot"
     
     # Abriendo el archivo en modo de escritura

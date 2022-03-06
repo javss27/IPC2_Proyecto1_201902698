@@ -1,34 +1,36 @@
 from .matriz import matriz
-from .grafico import crearGrafico
+from .grafico import guardarDot
 from graphviz import render
 from graphviz import Source
 import os
+from os import remove
 
 class Nodo:
-    def __init__(self, siguiente, nombrePiso, codigoPatron1, codigoPatron2,R,C,F,S, patron1, patron2):
+    def __init__(self, siguiente,  nombrePiso, R,C,F,S, listaPatrones):
         self.setSiguiente(siguiente)
-        self.setValor( nombrePiso, codigoPatron1, codigoPatron2, R,C,F,S, patron1, patron2)
+        self.setValor(  nombrePiso, R,C,F,S, listaPatrones)
 
     def setSiguiente(self, siguiente):
         self.siguiente = siguiente
 
-    def setValor(self, nombrePiso,codigoPatron1, codigoPatron2, R,C,F,S, patron1, patron2):
+    def setValor(self, nombrePiso, R,C,F,S, listaPatrones):
+        self.listaPatrones = listaPatrones
         self.nombrePiso = nombrePiso
-        self.codigoPatron1 = codigoPatron1
-        self.codigoPatron2 = codigoPatron2
         self.R = R
         self.C = C
         self.F = F #costo por volteo
         self.S = S #Costo por cambio
-        self.patron1 = patron1.replace(" ","").replace("    ","").replace("\n","")
-        self.patron2 = patron2.replace(" ","").replace("    ","").replace("\n","")
+       
         
         self.matrizUno = matriz()
         self.matrizDos = matriz()
-        self.matrizUno.llenar(int(R),int(C),self.patron1)
-        self.matrizDos.llenar(int(R),int(C),self.patron2)
         self.precio = 0
-        print(self.calcular())
+
+    def limpiar(self):
+        self.precio = 0
+        self.matrizUno = matriz()
+        self.matrizDos = matriz()
+        
         
     def calcular(self):
         completo = False
@@ -118,6 +120,7 @@ class Nodo:
 
     #creando grafico 
     def crearDot(self):
+        remove("prueba1")
         grafico = 'digraph D {    node [shape=plaintext]      some_node [  label=<<table border="0" cellborder="1" cellspacing="0">'
 
         for i in range(int(self.R)):
@@ -130,10 +133,11 @@ class Nodo:
                         grafico += '<td bgcolor="white">W</td>'
                 grafico +=  "</tr> \n"
         grafico += '</table>> ]  ;  }'
-        crearGrafico(grafico,"prueba1")
+
+        guardarDot(grafico,"prueba1")
         path = 'C:/Users/pjbco/Desktop/1ER SEMESTRE 2022/IPC2/Practica1/IPC2_Proyecto1_201902698/prueba1.dot'
         s = Source.from_file(path)
-        s.render('abcd.gv', format='jpg',view=False)
+        s.render('prueba1', format='jpg',view=True)
 
          
     def crearGrafico(self):
@@ -144,7 +148,7 @@ class Nodo:
                     separador += self.matrizUno.buscar(i,j) + "|"
                 print(separador)
                 
-                self.crearDot()
+        self.crearDot()
         input("presione Enter para continuar!!")
     
     def voltearPiso(self,i,j):
@@ -152,6 +156,22 @@ class Nodo:
         self.precio += int(self.F) 
         print("Se voltearon los azulejos 2")
         self.crearGrafico()    
+
+    def imprimirMatrizUno(self):
+        for i in range(int(self.R)):
+                separador = "|"
+
+                for j in range(int(self.C)):
+                    separador += self.matrizUno.buscar(i,j) + "|"
+                print(separador)
+
+    def imprimirMatrizDos(self):
+        for i in range(int(self.R)):
+                separador = "|"
+
+                for j in range(int(self.C)):
+                    separador += self.matrizDos.buscar(i,j) + "|"
+                print(separador)
 
                     
 
