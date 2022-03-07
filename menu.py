@@ -8,10 +8,9 @@ from lector import iniciarAnalisis
 # Array con las opciones del menu
 menu_options = {
     1: "Cargar Archivo xml.",
-    2: "Ver Pisos Disponibles",
-    3: "Ver Codigos",
-    4: "",
-    5: "",
+    2: "Ver Pisos Disponibles.",
+    3: "Ver Codigos.",
+    4: "Salir de la aplicacion.",
 }
 # For que imprime las opciones del menu
 def print_menu():
@@ -54,17 +53,23 @@ if __name__ == "__main__":
             print("Seleccionar codigo dos:")
             
             verPiso.listaPatrones.imprimir()
-            option2 = input("Escriba el nombre del segundo codigo: ")
+            option2 = input("Escriba el nombre del segundo codigo: ")   
             patron = verPiso.listaPatrones.buscar(option2)
             verPiso.matrizDos.llenar(int(verPiso.R), int(verPiso.C),patron)
             verPiso.imprimirMatrizDos()
             print("Pasos para cambiar el patron: ")
-            print("Precio Total:", verPiso.calcular())
-
+            print("1--Ver en consola: ")
+            print("2--Generar en imgen: ")
+            try:
+                option = int(input("Ingrese un numero: "))
+            except:
+                print("Entrada incorrecta. Por favor ingrese un numero ...")
+            if option == 1:
+                print("Precio Total:", verPiso.calcular(True))
+            if option == 2:
+                print("Precio Total:", verPiso.calcular(False))
+                verPiso.crearPasos()
         elif option == 4:
-            print("Generando reporte....")
-            
-        elif option == 5:
             print("Saliendo...")
             exit()
         else:

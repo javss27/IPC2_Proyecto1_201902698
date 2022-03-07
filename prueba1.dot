@@ -1,16 +1,71 @@
-digraph D {    node [shape=plaintext]      some_node [  label=<<table border="0" cellborder="1" cellspacing="0"><tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
-<tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
-<tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
-<tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
-<tr><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td></tr> 
-<tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
-<tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
-<tr><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td></tr> 
-<tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
-<tr><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
-<tr><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
-<tr><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
-<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
-<tr><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="black">B</td></tr> 
-<tr><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="black">B</td></tr> 
-</table>> ]  ;  }
+digraph D {    node [shape=plaintext]some_node1 [  label=<<table border="0" cellborder="1" cellspacing="0"><tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+</table>> ]  ; some_node2 [  label=<<table border="0" cellborder="1" cellspacing="0"><tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+</table>> ]  ; some_node3 [  label=<<table border="0" cellborder="1" cellspacing="0"><tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+</table>> ]  ; some_node4 [  label=<<table border="0" cellborder="1" cellspacing="0"><tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+</table>> ]  ; some_node5 [  label=<<table border="0" cellborder="1" cellspacing="0"><tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+</table>> ]  ; some_node6 [  label=<<table border="0" cellborder="1" cellspacing="0"><tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+</table>> ]  ; some_node7 [  label=<<table border="0" cellborder="1" cellspacing="0"><tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+</table>> ]  ; some_node8 [  label=<<table border="0" cellborder="1" cellspacing="0"><tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+</table>> ]  ; some_node9 [  label=<<table border="0" cellborder="1" cellspacing="0"><tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+</table>> ]  ; some_node10 [  label=<<table border="0" cellborder="1" cellspacing="0"><tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+</table>> ]  ; some_node11 [  label=<<table border="0" cellborder="1" cellspacing="0"><tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+</table>> ]  ; some_node12 [  label=<<table border="0" cellborder="1" cellspacing="0"><tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+</table>> ]  ; some_node13 [  label=<<table border="0" cellborder="1" cellspacing="0"><tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="black">B</td></tr> 
+</table>> ]  ; some_node14 [  label=<<table border="0" cellborder="1" cellspacing="0"><tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td><td bgcolor="white">W</td></tr> 
+<tr><td bgcolor="white">W</td><td bgcolor="white">W</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="black">B</td><td bgcolor="white">W</td></tr> 
+</table>> ]  ; }
